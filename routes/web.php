@@ -12,11 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login', 'LoginController@login')->                   name('login');
+Route::get('/login', 'LoginController@login')                  -> name('login');
 Route::get('/forgotPassword', 'LoginController@forgotPassword')-> name('forgotPassword');
-Route::post('/login', 'LoginController@recoveryPassword')->       name('recoveryPassword');
-Route::post('/logar', 'LoginController@logar')->                  name('logar');
-Route::get('/index', 'LoginController@mainScreen')->              name('mainScreen');
+Route::post('/login', 'LoginController@recoveryPassword')      -> name('recoveryPassword');
+Route::post('/logar', 'LoginController@logar')                 -> name('logar');
+Route::get('/index', 'LoginController@mainScreen')             -> name('mainScreen');
 
 
 Route::get('/', function () {
