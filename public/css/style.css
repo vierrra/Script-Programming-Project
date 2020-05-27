@@ -1,0 +1,57 @@
+.center {
+	text-align: center;
+	position: center;
+}
+
+.position-input {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+.custom-container {
+	border: 1px solid rgb(255, 255, 255);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	width: 25%;
+	background-color: #e6e6e6;
+}
+
+.button {
+	width: 40%;
+}
+
+.logo-image {
+	opacity: 0.6;
+	margin-top: 20px;
+}
+
+.logo-image-menu {
+	opacity: 0.6;	
+}
+
+.m-l-10 {
+	margin-left: 10px;
+}
+
+.rodape-pagina {
+	background-color: #b1aeae;
+	color: black;
+	clear: both;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.rodape-pagina a {
+	color: black;	
+}
+
+.alert-danger {
+	font: Arial; 
+	size: 3;
+	color: "ff0000";
+}
