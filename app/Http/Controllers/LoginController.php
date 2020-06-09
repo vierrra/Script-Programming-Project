@@ -18,8 +18,12 @@ class LoginController extends Controller
         $request->validate([
             'email' => 'required|email'
         ]);
-        
-        return redirect()->route('login');
+
+
+        if ($request->email == 'vierrra@hotmail.com')
+            return redirect()->route('login');
+        else
+            return redirect()->back();
     }
 
     public function logar(Request $request) {
