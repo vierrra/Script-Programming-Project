@@ -18,8 +18,6 @@ class LoginController extends Controller
         $request->validate([
             'email' => 'required|email'
         ]);
-
-
         if ($request->email == 'vierrra@hotmail.com')
             return redirect()->route('login');
         else
@@ -28,11 +26,17 @@ class LoginController extends Controller
 
     public function logar(Request $request) {
         if($request->email == 'vierrra@hotmail.com' && $request->password == '654321') 
+            session(['name' => 'Renato']);
             return redirect()->route('mainScreen');
         return redirect()->back()->with('error', 'Login ou senha incorreta');  
     }
 
     public function mainScreen() {
         return view('index');
+    }
+
+    public function logout(Request $request) {
+        $request->session()->flush();
+        return redirect('login');
     }
 }

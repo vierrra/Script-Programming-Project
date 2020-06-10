@@ -12,11 +12,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/teste', function () {
+//     echo 'teste';
+//     session(['name' => 'Renato']);
+//     echo session('name');
+// });
+
 Route::get('/login', 'LoginController@login')                  -> name('login');
 Route::get('/forgotPassword', 'LoginController@forgotPassword')-> name('forgotPassword');
 Route::post('/login', 'LoginController@recoveryPassword')      -> name('recoveryPassword');
 Route::post('/logar', 'LoginController@logar')                 -> name('logar');
-Route::get('/index', 'LoginController@mainScreen')             -> name('mainScreen');
+// Route::get('/index', 'LoginController@mainScreen')             -> name('mainScreen')->middleware('login');
+// Route::get('/logout', 'LoginController@logout')                -> name('logout');
+
+Route::group(['middleware' => 'login'], function () {
+    Route::get('/index', 'LoginController@mainScreen')-> name('mainScreen'); #FaltaCriar IndexController
+    Route::get('/logout', 'LoginController@logout')   -> name('logout');
+});
 
 
 Route::get('/', function () {
