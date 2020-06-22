@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/teste', function () {
-//     echo 'teste';
-//     session(['name' => 'Renato']);
-//     echo session('name');
-// });
 
 Route::get('/login', 'LoginController@login')                  -> name('login');
 Route::get('/forgotPassword', 'LoginController@forgotPassword')-> name('forgotPassword');
