@@ -23,11 +23,14 @@ Route::get('/forgotPassword', 'LoginController@forgotPassword')-> name('forgotPa
 Route::post('/login', 'LoginController@recoveryPassword')      -> name('recoveryPassword');
 Route::post('/logar', 'LoginController@logar')                 -> name('logar');
 
+Route::get('/home', 'HomeController@home')                     -> name('home');
+Route::get('/contacts', 'HomeController@contacts')             -> name('contacts');
+Route::get('/loyalty', 'HomeController@loyalty')               -> name('loyalty');
+
 Route::group(['middleware' => 'login'], function () {
     Route::get('/index', 'LoginController@mainScreen')-> name('mainScreen'); #FaltaCriar IndexController
     Route::get('/logout', 'LoginController@logout')   -> name('logout');
 });
-
 
 Route::get('/', function () {
     return view('welcome');
