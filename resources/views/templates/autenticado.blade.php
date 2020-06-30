@@ -23,9 +23,10 @@
 							</div>
 							<ul class="nav navbar-nav">
 								<li class="active m-l-10"><a href="./index.html">Início</a></li>
-								<li><a href="#">Tela da Recepção</a></li>
-								<li><a href="#">Clientes</a></li>
-								<li><a href="#">Funcionários</a></li>
+								<li><a href="{{route('reception')}}">Tela da Recepção</a></li>
+								<li><a href="{{route('client.list')}}">Clientes</a></li>
+								<li><a href="{{route('collaborators.list')}}">Funcionários</a></li>
+								<li><a href="#">Produtos</a></li>
 								<li><a href="#">Relatórios</a></li>
 								<li><a href="#" data-toggle="modal" data-target="#myModal">Sair</a></li>
 								<li><a><i><b>Olá {{session('name')}}</b></i></a></li>

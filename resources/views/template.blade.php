@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div class="custom-container">
-        
+	
             @yield('main_content')
 
         </div>
