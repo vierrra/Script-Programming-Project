@@ -1,4 +1,19 @@
-@extends('app')
+@extends('templates.autenticado')
+
+@section('conteudo')
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Teste</h1>
+        </div>
+    </div>
+@endsection
+
+
+
+
+
+{{-- @extends('app')
 
 @section('conteudo')
 <table class="table">
@@ -32,4 +47,4 @@
       </tr>
     </tbody>
   </table>
-@endsection
+@endsection --}}

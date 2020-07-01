@@ -19,7 +19,6 @@
             <td>{{$client['cpf']}}</td>
             <td>{{$client['email']}}</td>
             <td>
-              <a href="{{route('client.toView', ['id' => $client['id']])}}">Visualizar</a>
               <a href="{{route('client.edit', ['id' => $client['id']])}}">Editar</a>
               <a href="{{route('client.delete', ['id' => $client['id']])}}">Excluir</a>
             </td>

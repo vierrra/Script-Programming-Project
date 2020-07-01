@@ -1,6 +1,4 @@
-
 @extends('templates.autenticado')
-
 
 @section('conteudo')
    
