@@ -6,23 +6,23 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<link href="css/style.css" rel="stylesheet">
+		<link href="{{url('css/style.css')}}" rel="stylesheet">
 		<title>Início</title>
 	</head>
 	<body>
 		<div>
 			<div class="row">
 				<div class="col-md-12 center">
-					<img src="./img/logo_with_name.jpg" height="200" width="200" class="logo-image">
+					<img src="{{url('/img/logo_with_name.jpg')}}" height="200" width="200" class="logo-image">
 				</div>
 				<div class="col-md-12 center">
 					<nav class="navbar navbar-default">
 						<div class="container-fluid">
 							<div class="navbar-header">
-								<img src="./img/logo.png" height="50" width="50" class="logo-image-menu">
+								<img src="{{url('img/logo.png')}}" height="50" width="50" class="logo-image-menu">
 							</div>
 							<ul class="nav navbar-nav">
-								<li class="active m-l-10"><a href="./index.html">Início</a></li>
+								<li class="active m-l-10"><a href="{{route('mainScreen')}}">Início</a></li>
 								<li><a href="{{route('reception')}}">Tela da Recepção</a></li>
 								<li><a href="{{route('client.list')}}">Clientes</a></li>
 								<li><a href="{{route('collaborators.list')}}">Funcionários</a></li>
@@ -33,19 +33,18 @@
 							</ul>
 						</div>
 					</nav>
-				</div>
-
-				<div style="padding: 0px 20px">
-					@yield('conteudo')
-				</div>
-
-				
+				</div>				
 			</div>
+			
+			<div style="padding: 0px 20px;">
+				@yield('conteudo')
+			</div>
+
 			<div class="col-md-12">
-				<img src="./img/background_white.jpg" height="800" width="100%">
+				<img src="{{url('img/background_white.jpg')}}" height="800" width="100%">
 			</div>
 		</div>
-	</body>
+
 	
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog modal-sm" role="document">
@@ -65,4 +64,5 @@
 		  </div>
 		</div>
 	  </div>
+	</body>
 </html>
