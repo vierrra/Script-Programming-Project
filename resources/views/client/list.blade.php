@@ -3,6 +3,9 @@
 @section('conteudo')
 <title>Cliente</title>
   <h1>Clientes</h1>
+  <div>
+    <a class="btn btn-primary" href="{{route('client.new')}}">Cadastro Cliente</a>
+  </div> 
   <table class="table table-hover">
       <thead>
         <tr>
@@ -13,6 +16,11 @@
         </tr>
       </thead>
       <tbody>
+
+        @if(session('acao'))
+          <p class="alert alert-success">{{session('acao')}}</p>
+        @endif
+
         @foreach ($clients as $client)
         <tr>
             <td>{{$client['name']}}</td>

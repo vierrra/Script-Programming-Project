@@ -1,16 +1,39 @@
-@extends('template')
+@extends('templates.autenticado')
 
-@section('main_content')
-<form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <small id="emailHelp" class="form-text text-muted">Well never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-  </form>
+@section('conteudo')
+  <h1>Cadastro de Livros</h1>
+
+		@if ($errors->any())
+		<!-- ERRO NO CADASTRO -->
+		<div class="alert alert-danger">
+			<strong>Erro!</strong>
+			@foreach($errors->all() as $erro)
+			<p> {{$erro}}</p>
+			@endforeach
+		</div>
+		<!-- [FIM] ERRO -->
+		@endif
+
+		<form action="{{route('client.save')}}" method="post">
+			@csrf
+
+			<div class="form-group">
+				<label for="campo-name">Nome:</label>
+				<input type="text" class="form-control" name="name" id="campo-name">
+			</div>
+			
+			
+			<div class="form-group">
+				<label for="campo-titulo">Cpf:</label>
+				<input type="text" class="form-control" name="cpf" id="campo-cpf">
+			</div>
+				
+			
+			<div class="form-group">
+				<label for="campo-email">Email:</label>
+				<input type="text" class="form-control" name="email" id="campo-email">
+			</div>
+  <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
 @endsection
+

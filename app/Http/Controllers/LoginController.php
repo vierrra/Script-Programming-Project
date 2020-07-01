@@ -31,10 +31,6 @@ class LoginController extends Controller
         return redirect()->back()->with('error', 'Login ou senha incorreta');  
     }
 
-    public function mainScreen() {
-        return view('index');
-    }
-
     public function logout(Request $request) {
         $request->session()->flush();
         return redirect('login');
